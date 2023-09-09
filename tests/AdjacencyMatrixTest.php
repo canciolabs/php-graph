@@ -5,7 +5,6 @@ namespace Cancio\Graph\Tests;
 use Cancio\Graph\AdjacencyMatrix;
 use Cancio\Graph\Edge\Edge;
 use Cancio\Graph\Node\Node;
-use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
 class AdjacencyMatrixTest extends TestCase
