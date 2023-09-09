@@ -2,6 +2,7 @@
 
 namespace Cancio\Graph;
 
+use Cancio\Graph\Collection\EdgeCollectionInterface;
 use Cancio\Graph\Collection\NodeCollection;
 use Cancio\Graph\Edge\EdgeInterface;
 use Cancio\Graph\Node\NodeInterface;
@@ -21,10 +22,7 @@ interface GraphInterface
      */
     public function getOutgoingNodes(NodeInterface $u): array;
 
-    /**
-     * @return EdgeInterface[]
-     */
-    public function getEdges(): array;
+    public function getEdges(): EdgeCollectionInterface;
 
     /**
      * @return EdgeInterface[]
