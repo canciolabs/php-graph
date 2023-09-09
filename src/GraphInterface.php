@@ -2,16 +2,14 @@
 
 namespace Cancio\Graph;
 
+use Cancio\Graph\Collection\NodeCollection;
 use Cancio\Graph\Edge\EdgeInterface;
 use Cancio\Graph\Node\NodeInterface;
 
 interface GraphInterface
 {
 
-    /**
-     * @return NodeInterface[]
-     */
-    public function getNodes(): array;
+    public function getNodes(): NodeCollection;
 
     /**
      * @return NodeInterface[]

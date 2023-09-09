@@ -2,6 +2,7 @@
 
 namespace Cancio\Graph;
 
+use Cancio\Graph\Collection\NodeCollection;
 use Cancio\Graph\Edge\EdgeInterface;
 use Cancio\Graph\Node\NodeInterface;
 use Webmozart\Assert\Assert;
@@ -11,10 +12,7 @@ class AdjacencyMatrix implements GraphInterface
 
     private array $matrix;
 
-    /**
-     * @var NodeInterface[]
-     */
-    private array $nodes;
+    private NodeCollection $nodes;
 
     /**
      * @var EdgeInterface[]
@@ -23,13 +21,9 @@ class AdjacencyMatrix implements GraphInterface
 
     public function __construct(array $nodes, array $edges)
     {
-        Assert::allIsInstanceOf($nodes, NodeInterface::class);
         Assert::allIsInstanceOf($edges, EdgeInterface::class);
 
-        $this->nodes = [];
-        foreach ($nodes as $node) {
-            $this->nodes[(string) $node] = $node;
-        }
+        $this->nodes = new NodeCollection($nodes);
 
         $this->edges = [];
         foreach ($edges as $edge) {
@@ -43,13 +37,10 @@ class AdjacencyMatrix implements GraphInterface
     {
         $this->matrix = [];
 
-        foreach ($this->nodes as $u) {
-            $fromId = $u->getId();
-
+        foreach ($this->nodes as $fromId => $from) {
             $this->matrix[$fromId] = [];
 
-            foreach ($this->nodes as $v) {
-                $toId = $v->getId();
+            foreach ($this->nodes as $toId => $to) {
                 $this->matrix[$fromId][$toId] = null;
             }
         }
@@ -61,10 +52,7 @@ class AdjacencyMatrix implements GraphInterface
         }
     }
 
-    /**
-     * @return NodeInterface[]
-     */
-    public function getNodes(): array
+    public function getNodes(): NodeCollection
     {
         return $this->nodes;
     }
@@ -73,8 +61,10 @@ class AdjacencyMatrix implements GraphInterface
     {
         $nodes = [];
 
-        foreach ($this->nodes as $v) {
-            if ($this->matrix[(string) $v][(string) $u] instanceof EdgeInterface) {
+        $uid = $u->getId();
+
+        foreach ($this->nodes as $vid => $v) {
+            if ($this->matrix[$vid][$uid] instanceof EdgeInterface) {
                 $nodes[] = $v;
             }
         }
@@ -86,8 +76,10 @@ class AdjacencyMatrix implements GraphInterface
     {
         $nodes = [];
 
-        foreach ($this->nodes as $v) {
-            if ($this->matrix[(string) $u][(string) $v] instanceof EdgeInterface) {
+        $uid = $u->getId();
+
+        foreach ($this->nodes as $vid => $v) {
+            if ($this->matrix[$uid][$vid] instanceof EdgeInterface) {
                 $nodes[] = $v;
             }
         }
@@ -104,8 +96,10 @@ class AdjacencyMatrix implements GraphInterface
     {
         $edges = [];
 
-        foreach ($this->nodes as $v) {
-            $edge = $this->matrix[(string) $v][(string) $u];
+        $uid = $u->getId();
+
+        foreach ($this->nodes as $vid => $v) {
+            $edge = $this->matrix[$vid][$uid];
 
             if ($edge instanceof EdgeInterface) {
                 $edges[] = $edge;
@@ -119,8 +113,10 @@ class AdjacencyMatrix implements GraphInterface
     {
         $edges = [];
 
-        foreach ($this->nodes as $v) {
-            $edge = $this->matrix[(string) $u][(string) $v];
+        $uid = $u->getId();
+
+        foreach ($this->nodes as $vid => $v) {
+            $edge = $this->matrix[$uid][$vid];
 
             if ($edge instanceof EdgeInterface) {
                 $edges[] = $edge;
@@ -132,7 +128,10 @@ class AdjacencyMatrix implements GraphInterface
 
     public function hasEdgeBetween(NodeInterface $u, NodeInterface $v): bool
     {
-        return $this->matrix[(string) $u][(string) $v] instanceof EdgeInterface;
+        $uid = $u->getId();
+        $vid = $v->getId();
+
+        return $this->matrix[$uid][$vid] instanceof EdgeInterface;
     }
 
 }
