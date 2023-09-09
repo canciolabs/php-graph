@@ -79,16 +79,7 @@ class NodeCollectionTest extends TestCase
         $collection->get($a);
     }
 
-    public function testGetByIdWhenNodeIsMissing(): void
-    {
-        $collection = new NodeCollection();
-
-        $this->expectException(NodeNotFoundException::class);
-
-        $collection->getById('A');
-    }
-
-    public function testGetAndGetById(): void
+    public function testGet(): void
     {
         $a = new Node('A');
         $b = new Node('B');
@@ -98,14 +89,11 @@ class NodeCollectionTest extends TestCase
         $collection->add($a);
 
         $this->assertSame($a, $collection->get($a));
-        $this->assertSame($a, $collection->getById('A'));
 
         $collection->add($b);
 
         $this->assertSame($a, $collection->get($a));
-        $this->assertSame($a, $collection->getById('A'));
         $this->assertSame($b, $collection->get($b));
-        $this->assertSame($b, $collection->getById('B'));
     }
 
     public function testGetIterator(): void
@@ -122,7 +110,7 @@ class NodeCollectionTest extends TestCase
         }
     }
 
-    public function testHasAndHasById(): void
+    public function testHas(): void
     {
         $a = new Node('A');
         $b = new Node('B');
@@ -131,23 +119,17 @@ class NodeCollectionTest extends TestCase
 
         // When node is missing
         $this->assertFalse($collection->has($a));
-        $this->assertFalse($collection->hasById('A'));
         $this->assertFalse($collection->has($b));
-        $this->assertFalse($collection->hasById('B'));
 
         $collection->add($a);
 
         $this->assertTrue($collection->has($a));
-        $this->assertTrue($collection->hasById('A'));
         $this->assertFalse($collection->has($b));
-        $this->assertFalse($collection->hasById('B'));
 
         $collection->add($b);
 
         $this->assertTrue($collection->has($a));
-        $this->assertTrue($collection->hasById('A'));
         $this->assertTrue($collection->has($b));
-        $this->assertTrue($collection->hasById('B'));
     }
 
     public function testRemoveWhenNodeIsMissing(): void
@@ -159,15 +141,6 @@ class NodeCollectionTest extends TestCase
         $this->expectException(NodeNotFoundException::class);
 
         $collection->remove($a);
-    }
-
-    public function testRemoveByIdWhenNodeIsMissing(): void
-    {
-        $collection = new NodeCollection();
-
-        $this->expectException(NodeNotFoundException::class);
-
-        $collection->removeById('A');
     }
 
     public function testRemove(): void
@@ -184,25 +157,6 @@ class NodeCollectionTest extends TestCase
         $this->assertTrue($collection->has($b));
 
         $collection->remove($b);
-
-        $this->assertFalse($collection->has($a));
-        $this->assertFalse($collection->has($b));;
-    }
-
-    public function testRemoveById(): void
-    {
-        $a = new Node('A');
-        $b = new Node('B');
-        $nodes = [$a, $b];
-
-        $collection = new NodeCollection($nodes);
-
-        $collection->removeById('A');
-
-        $this->assertFalse($collection->has($a));
-        $this->assertTrue($collection->has($b));
-
-        $collection->removeById('B');
 
         $this->assertFalse($collection->has($a));
         $this->assertFalse($collection->has($b));;

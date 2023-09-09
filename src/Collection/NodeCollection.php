@@ -4,6 +4,7 @@ namespace Cancio\Graph\Collection;
 
 use ArrayIterator;
 use Cancio\Graph\Exception\NodeNotFoundException;
+use Cancio\Graph\Node\Node;
 use Cancio\Graph\Node\NodeInterface;
 use Traversable;
 
@@ -39,14 +40,9 @@ class NodeCollection implements NodeCollectionInterface
         return count($this->nodes);
     }
 
-    public function get(NodeInterface $node): NodeInterface
+    public function get(string $id): NodeInterface
     {
-        return $this->getById($node->getId());
-    }
-
-    public function getById(string $id): NodeInterface
-    {
-        $this->assertNodeExists($id);
+        $this->assertNodeExists(new Node($id));
 
         return $this->nodes[$id];
     }
@@ -58,26 +54,14 @@ class NodeCollection implements NodeCollectionInterface
 
     public function has(NodeInterface $node): bool
     {
-        return $this->hasById($node->getId());
-    }
-
-    public function hasById(string $id): bool
-    {
-        return array_key_exists($id, $this->nodes);
+        return array_key_exists($node->getId(), $this->nodes);
     }
 
     public function remove(NodeInterface $node): NodeCollectionInterface
     {
-        $this->removeById($node->getId());
+        $this->assertNodeExists($node);
 
-        return $this;
-    }
-
-    public function removeById(string $id): NodeCollectionInterface
-    {
-        $this->assertNodeExists($id);
-
-        unset($this->nodes[$id]);
+        unset($this->nodes[$node->getId()]);
 
         return $this;
     }
@@ -98,13 +82,10 @@ class NodeCollection implements NodeCollectionInterface
         return array_values($this->nodes);
     }
 
-    private function assertNodeExists(string $id): void
+    private function assertNodeExists(NodeInterface $node): void
     {
-        if (!$this->hasById($id)) {
-            throw new NodeNotFoundException(sprintf(
-                'The node "%s" was not found in the NodeCollection.',
-                $id
-            ));
+        if (!$this->has($node)) {
+            throw new NodeNotFoundException($node);
         }
     }
 

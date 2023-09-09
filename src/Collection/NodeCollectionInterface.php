@@ -30,17 +30,10 @@ interface NodeCollectionInterface extends Countable, IteratorAggregate
 
     /**
      * Gets a node.
-     * @param NodeInterface $node
-     * @return NodeInterface
-     */
-    public function get(NodeInterface $node): NodeInterface;
-
-    /**
-     * Gets a node by id.
      * @param string $id
      * @return NodeInterface
      */
-    public function getById(string $id): NodeInterface;
+    public function get(string $id): NodeInterface;
 
     /**
      * Checks if a node exists.
@@ -50,25 +43,11 @@ interface NodeCollectionInterface extends Countable, IteratorAggregate
     public function has(NodeInterface $node): bool;
 
     /**
-     * Checks if a node exists by id.
-     * @param string $id
-     * @return bool
-     */
-    public function hasById(string $id): bool;
-
-    /**
      * Removes a node.
      * @param NodeInterface $node
      * @return self
      */
     public function remove(NodeInterface $node): self;
-
-    /**
-     * Removes a node by id.
-     * @param string $id
-     * @return self
-     */
-    public function removeById(string $id): self;
 
     /**
      * Replaces the current node list by a new one.
