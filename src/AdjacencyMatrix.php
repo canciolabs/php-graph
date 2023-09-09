@@ -2,33 +2,24 @@
 
 namespace Cancio\Graph;
 
+use Cancio\Graph\Collection\EdgeCollection;
+use Cancio\Graph\Collection\EdgeCollectionInterface;
 use Cancio\Graph\Collection\NodeCollection;
+use Cancio\Graph\Collection\NodeCollectionInterface;
 use Cancio\Graph\Edge\EdgeInterface;
 use Cancio\Graph\Node\NodeInterface;
-use Webmozart\Assert\Assert;
 
 class AdjacencyMatrix implements GraphInterface
 {
 
     private array $matrix;
-
-    private NodeCollection $nodes;
-
-    /**
-     * @var EdgeInterface[]
-     */
-    private array $edges;
+    private NodeCollectionInterface $nodes;
+    private EdgeCollectionInterface $edges;
 
     public function __construct(array $nodes, array $edges)
     {
-        Assert::allIsInstanceOf($edges, EdgeInterface::class);
-
         $this->nodes = new NodeCollection($nodes);
-
-        $this->edges = [];
-        foreach ($edges as $edge) {
-            $this->edges[(string) $edge] = $edge;
-        }
+        $this->edges = new EdgeCollection($edges);
 
         $this->initMatrix();
     }
@@ -87,7 +78,7 @@ class AdjacencyMatrix implements GraphInterface
         return $nodes;
     }
 
-    public function getEdges(): array
+    public function getEdges(): EdgeCollectionInterface
     {
         return $this->edges;
     }

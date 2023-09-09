@@ -11,20 +11,6 @@ use PHPUnit\Framework\TestCase;
 class AdjacencyMatrixTest extends TestCase
 {
 
-    public function testConstructorWhenEdgesArrayIsInvalid(): void
-    {
-        $this->expectException(InvalidArgumentException::class);
-
-        $a = new Node('A');
-        $b = new Node('B');
-        $c = new Node('C');
-        $nodes = [$a, $b, $c];
-
-        $edges = ['A-B', 'A-C'];
-
-        new AdjacencyMatrix($nodes, $edges);
-    }
-
     public function testEdgesAndNodesGetters(): void
     {
         $a = new Node('A');
@@ -39,11 +25,7 @@ class AdjacencyMatrixTest extends TestCase
         $graph = new AdjacencyMatrix($nodes, $edges);
 
         $this->assertSame($nodes, $graph->getNodes()->toArray());
-
-        $this->assertSame([
-            $edge1->getId() => $edge1,
-            $edge2->getId() => $edge2,
-        ], $graph->getEdges());
+        $this->assertSame($edges, $graph->getEdges()->toArray());
     }
 
     public function testIncomingAndOutgoingGetters(): void
