@@ -1,9 +1,9 @@
 <?php
 
-namespace Cancio\Graph\Tests;
+namespace Cancio\Graph\Tests\Ds\Graph;
 
-use Cancio\Graph\AdjacencyMatrix;
 use Cancio\Graph\Ds\Edge\Edge;
+use Cancio\Graph\Ds\Graph\AdjacencyMatrix;
 use Cancio\Graph\Ds\Node\Node;
 use PHPUnit\Framework\TestCase;
 

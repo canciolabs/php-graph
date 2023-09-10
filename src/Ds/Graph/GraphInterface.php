@@ -1,10 +1,8 @@
 <?php
 
-namespace Cancio\Graph;
+namespace Cancio\Graph\Ds\Graph;
 
 use Cancio\Graph\Ds\Edge\EdgeInterface;
-use Cancio\Graph\Ds\Graph\EdgesAwareInterface;
-use Cancio\Graph\Ds\Graph\NodesAwareInterface;
 use Cancio\Graph\Ds\Node\NodeInterface;
 
 interface GraphInterface extends EdgesAwareInterface, NodesAwareInterface

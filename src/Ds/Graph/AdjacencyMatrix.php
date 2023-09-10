@@ -1,12 +1,10 @@
 <?php
 
-namespace Cancio\Graph;
+namespace Cancio\Graph\Ds\Graph;
 
 use Cancio\Graph\Ds\Collection\EdgeCollection;
 use Cancio\Graph\Ds\Collection\NodeCollection;
 use Cancio\Graph\Ds\Edge\EdgeInterface;
-use Cancio\Graph\Ds\Graph\EdgesAwareTrait;
-use Cancio\Graph\Ds\Graph\NodesAwareTrait;
 use Cancio\Graph\Ds\Node\NodeInterface;
 
 class AdjacencyMatrix implements GraphInterface
