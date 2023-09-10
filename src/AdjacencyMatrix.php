@@ -7,13 +7,15 @@ use Cancio\Graph\Ds\Collection\EdgeCollectionInterface;
 use Cancio\Graph\Ds\Collection\NodeCollection;
 use Cancio\Graph\Ds\Collection\NodeCollectionInterface;
 use Cancio\Graph\Ds\Edge\EdgeInterface;
+use Cancio\Graph\Ds\Graph\NodesAwareTrait;
 use Cancio\Graph\Ds\Node\NodeInterface;
 
 class AdjacencyMatrix implements GraphInterface
 {
 
+    use NodesAwareTrait;
+
     private array $matrix;
-    private NodeCollectionInterface $nodes;
     private EdgeCollectionInterface $edges;
 
     public function __construct(array $nodes, array $edges)
@@ -41,11 +43,6 @@ class AdjacencyMatrix implements GraphInterface
             $toId = $edge->getTo()->getId();
             $this->matrix[$fromId][$toId] = $edge;
         }
-    }
-
-    public function getNodes(): NodeCollection
-    {
-        return $this->nodes;
     }
 
     public function getIncomingNodes(NodeInterface $u): array
