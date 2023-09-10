@@ -2,9 +2,9 @@
 
 namespace Cancio\Graph\Tests\Algorithm\TopologicalSort;
 
-use Cancio\Graph\AdjacencyMatrix;
 use Cancio\Graph\Algorithm\TopologicalSort\TopologicalSort;
 use Cancio\Graph\Ds\Edge\Edge;
+use Cancio\Graph\Ds\Graph\AdjacencyMatrix;
 use Cancio\Graph\Ds\Node\Node;
 use PHPUnit\Framework\TestCase;
 

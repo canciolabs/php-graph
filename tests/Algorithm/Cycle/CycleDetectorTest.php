@@ -2,9 +2,9 @@
 
 namespace Cancio\Graph\Tests\Algorithm\Cycle;
 
-use Cancio\Graph\AdjacencyMatrix;
 use Cancio\Graph\Algorithm\Cycle\CycleDetector;
-use Cancio\Graph\GraphInterface;
+use Cancio\Graph\Ds\Graph\AdjacencyMatrix;
+use Cancio\Graph\Ds\Graph\GraphInterface;
 use PHPUnit\Framework\TestCase;
 
 class CycleDetectorTest extends TestCase

@@ -4,8 +4,8 @@ namespace Cancio\Graph\Tests\Algorithm\Cycle;
 
 //use Cancio\Graph\AdjacencyHybrid;
 //use Cancio\Graph\AdjacencyList;
-use Cancio\Graph\AdjacencyMatrix;
 use Cancio\Graph\Ds\Edge\Edge;
+use Cancio\Graph\Ds\Graph\AdjacencyMatrix;
 use Cancio\Graph\Ds\Node\Node;
 
 trait CycleDataProviderTrait

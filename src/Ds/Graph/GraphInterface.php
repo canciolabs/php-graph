@@ -1,16 +1,12 @@
 <?php
 
-namespace Cancio\Graph;
+namespace Cancio\Graph\Ds\Graph;
 
-use Cancio\Graph\Ds\Collection\EdgeCollectionInterface;
-use Cancio\Graph\Ds\Collection\NodeCollection;
 use Cancio\Graph\Ds\Edge\EdgeInterface;
 use Cancio\Graph\Ds\Node\NodeInterface;
 
-interface GraphInterface
+interface GraphInterface extends EdgesAwareInterface, NodesAwareInterface
 {
-
-    public function getNodes(): NodeCollection;
 
     /**
      * @return NodeInterface[]
@@ -21,8 +17,6 @@ interface GraphInterface
      * @return NodeInterface[]
      */
     public function getOutgoingNodes(NodeInterface $u): array;
-
-    public function getEdges(): EdgeCollectionInterface;
 
     /**
      * @return EdgeInterface[]
