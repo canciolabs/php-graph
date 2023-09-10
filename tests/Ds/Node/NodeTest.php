@@ -1,6 +1,6 @@
 <?php
 
-namespace Cancio\Graph\Tests\Node;
+namespace Cancio\Graph\Tests\Ds\Node;
 
 use Cancio\Graph\Ds\Node\Node;
 use PHPUnit\Framework\TestCase;

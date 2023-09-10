@@ -1,6 +1,6 @@
 <?php
 
-namespace Cancio\Graph\Tests\Algorithm;
+namespace Cancio\Graph\Tests\Algorithm\TopologicalSort;
 
 use Cancio\Graph\AdjacencyMatrix;
 use Cancio\Graph\Algorithm\TopologicalSort\TopologicalSort;

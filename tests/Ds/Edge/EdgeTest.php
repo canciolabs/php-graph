@@ -1,6 +1,6 @@
 <?php
 
-namespace Cancio\Graph\Tests\Edge;
+namespace Cancio\Graph\Tests\Ds\Edge;
 
 use Cancio\Graph\Ds\Edge\Edge;
 use Cancio\Graph\Ds\Node\Node;

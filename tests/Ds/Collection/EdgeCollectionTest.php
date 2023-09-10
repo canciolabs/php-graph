@@ -1,6 +1,6 @@
 <?php
 
-namespace Cancio\Graph\Tests\Collection;
+namespace Cancio\Graph\Tests\Ds\Collection;
 
 use Cancio\Graph\Ds\Collection\EdgeCollection;
 use Cancio\Graph\Ds\Edge\Edge;
