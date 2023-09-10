@@ -3,7 +3,7 @@
 namespace Cancio\Graph\Tests\Ds\Graph;
 
 use Cancio\Graph\Ds\Edge\Edge;
-use Cancio\Graph\Ds\Graph\AdjacencyMatrix;
+use Cancio\Graph\Ds\Graph\AdjacencyList;
 use Cancio\Graph\Ds\Node\Node;
 use PHPUnit\Framework\TestCase;
 
@@ -21,7 +21,7 @@ class AdjacencyListTest extends TestCase
         $edge2 = new Edge($a, $c);
         $edges = [$edge1, $edge2];
 
-        $graph = new AdjacencyMatrix($nodes, $edges);
+        $graph = new AdjacencyList($nodes, $edges);
 
         $this->assertSame($nodes, $graph->getNodes()->toArray());
         $this->assertSame($edges, $graph->getEdges()->toArray());
@@ -44,7 +44,7 @@ class AdjacencyListTest extends TestCase
         $edge6 = new Edge($d, $c);
         $edges = [$edge1, $edge2, $edge3, $edge4, $edge5, $edge6];
 
-        $graph = new AdjacencyMatrix($nodes, $edges);
+        $graph = new AdjacencyList($nodes, $edges);
 
         $this->assertSame([], $graph->getIncomingNodes($a));
         $this->assertSame([$a], $graph->getIncomingNodes($b));
@@ -82,7 +82,7 @@ class AdjacencyListTest extends TestCase
         $edge2 = new Edge($a, $c);
         $edges = [$edge1, $edge2];
 
-        $graph = new AdjacencyMatrix($nodes, $edges);
+        $graph = new AdjacencyList($nodes, $edges);
 
         $this->assertFalse($graph->hasEdgeBetween($a, $a));
         $this->assertTrue($graph->hasEdgeBetween($a, $b));
