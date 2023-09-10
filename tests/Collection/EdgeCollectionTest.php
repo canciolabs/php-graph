@@ -2,7 +2,7 @@
 
 namespace Cancio\Graph\Tests\Collection;
 
-use Cancio\Graph\Collection\EdgeCollection;
+use Cancio\Graph\Ds\Collection\EdgeCollection;
 use Cancio\Graph\Ds\Edge\Edge;
 use Cancio\Graph\Ds\Node\Node;
 use Cancio\Graph\Exception\EdgeNotFoundException;

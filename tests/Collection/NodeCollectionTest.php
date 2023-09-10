@@ -2,7 +2,7 @@
 
 namespace Cancio\Graph\Tests\Collection;
 
-use Cancio\Graph\Collection\NodeCollection;
+use Cancio\Graph\Ds\Collection\NodeCollection;
 use Cancio\Graph\Ds\Node\Node;
 use Cancio\Graph\Exception\NodeNotFoundException;
 use PHPUnit\Framework\TestCase;

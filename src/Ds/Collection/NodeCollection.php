@@ -1,6 +1,6 @@
 <?php
 
-namespace Cancio\Graph\Collection;
+namespace Cancio\Graph\Ds\Collection;
 
 use ArrayIterator;
 use Cancio\Graph\Ds\Node\Node;
