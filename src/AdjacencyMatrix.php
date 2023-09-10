@@ -3,9 +3,7 @@
 namespace Cancio\Graph;
 
 use Cancio\Graph\Ds\Collection\EdgeCollection;
-use Cancio\Graph\Ds\Collection\EdgeCollectionInterface;
 use Cancio\Graph\Ds\Collection\NodeCollection;
-use Cancio\Graph\Ds\Collection\NodeCollectionInterface;
 use Cancio\Graph\Ds\Edge\EdgeInterface;
 use Cancio\Graph\Ds\Graph\EdgesAwareTrait;
 use Cancio\Graph\Ds\Graph\NodesAwareTrait;
@@ -17,6 +15,10 @@ class AdjacencyMatrix implements GraphInterface
     use NodesAwareTrait;
     use EdgesAwareTrait;
 
+    /**
+     * Outgoing edges indexes by from and to nodes.
+     * @var array
+     */
     private array $matrix;
 
     public function __construct(array $nodes, array $edges)
