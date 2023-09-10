@@ -2,7 +2,7 @@
 
 namespace Cancio\Graph\Algorithm;
 
-use Cancio\Graph\Node\NodeInterface;
+use Cancio\Graph\Ds\Node\NodeInterface;
 
 class TopologicalSort extends AbstractDFS
 {

@@ -5,9 +5,9 @@ namespace Cancio\Graph\Tests\Algorithm;
 use Cancio\Graph\AdjacencyMatrix;
 use Cancio\Graph\Algorithm\AbstractDFS;
 use Cancio\Graph\Algorithm\TopologicalSort;
-use Cancio\Graph\Edge\Edge;
+use Cancio\Graph\Ds\Edge\Edge;
+use Cancio\Graph\Ds\Node\Node;
 use Cancio\Graph\GraphInterface;
-use Cancio\Graph\Node\Node;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 

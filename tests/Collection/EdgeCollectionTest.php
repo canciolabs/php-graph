@@ -3,9 +3,9 @@
 namespace Cancio\Graph\Tests\Collection;
 
 use Cancio\Graph\Collection\EdgeCollection;
-use Cancio\Graph\Edge\Edge;
+use Cancio\Graph\Ds\Edge\Edge;
+use Cancio\Graph\Ds\Node\Node;
 use Cancio\Graph\Exception\EdgeNotFoundException;
-use Cancio\Graph\Node\Node;
 use PHPUnit\Framework\TestCase;
 
 class EdgeCollectionTest extends TestCase

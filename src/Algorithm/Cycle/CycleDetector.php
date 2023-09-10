@@ -3,7 +3,7 @@
 namespace Cancio\Graph\Algorithm\Cycle;
 
 use Cancio\Graph\Algorithm\AbstractDFS;
-use Cancio\Graph\Node\NodeInterface;
+use Cancio\Graph\Ds\Node\NodeInterface;
 
 class CycleDetector extends AbstractDFS
 {

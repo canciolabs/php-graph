@@ -3,8 +3,8 @@
 namespace Cancio\Graph\Utils;
 
 use Cancio\Graph\Collection\NodeCollectionInterface;
+use Cancio\Graph\Ds\Node\NodeInterface;
 use Cancio\Graph\Exception\NodeNotFoundException;
-use Cancio\Graph\Node\NodeInterface;
 
 class VisitedNodesChecker
 {

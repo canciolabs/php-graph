@@ -2,8 +2,8 @@
 
 namespace Cancio\Graph\Collection;
 
-use Cancio\Graph\Edge\EdgeInterface;
-use Cancio\Graph\Node\NodeInterface;
+use Cancio\Graph\Ds\Edge\EdgeInterface;
+use Cancio\Graph\Ds\Node\NodeInterface;
 use Countable;
 use IteratorAggregate;
 

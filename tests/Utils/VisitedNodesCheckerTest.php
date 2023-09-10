@@ -3,8 +3,8 @@
 namespace Cancio\Graph\Tests\Utils;
 
 use Cancio\Graph\Collection\NodeCollection;
+use Cancio\Graph\Ds\Node\Node;
 use Cancio\Graph\Exception\NodeNotFoundException;
-use Cancio\Graph\Node\Node;
 use Cancio\Graph\Utils\VisitedNodesChecker;
 use PHPUnit\Framework\TestCase;
 

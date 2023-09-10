@@ -1,8 +1,8 @@
 <?php
 
-namespace Cancio\Graph\Edge;
+namespace Cancio\Graph\Ds\Edge;
 
-use Cancio\Graph\Node\NodeInterface;
+use Cancio\Graph\Ds\Node\NodeInterface;
 
 trait EdgeTrait
 {

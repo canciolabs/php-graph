@@ -6,8 +6,8 @@ use Cancio\Graph\Collection\EdgeCollection;
 use Cancio\Graph\Collection\EdgeCollectionInterface;
 use Cancio\Graph\Collection\NodeCollection;
 use Cancio\Graph\Collection\NodeCollectionInterface;
-use Cancio\Graph\Edge\EdgeInterface;
-use Cancio\Graph\Node\NodeInterface;
+use Cancio\Graph\Ds\Edge\EdgeInterface;
+use Cancio\Graph\Ds\Node\NodeInterface;
 
 class AdjacencyMatrix implements GraphInterface
 {

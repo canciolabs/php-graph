@@ -1,6 +1,6 @@
 <?php
 
-namespace Cancio\Graph\Node;
+namespace Cancio\Graph\Ds\Node;
 
 trait NodeTrait
 {

@@ -4,8 +4,8 @@ namespace Cancio\Graph\Tests\Algorithm;
 
 use Cancio\Graph\AdjacencyMatrix;
 use Cancio\Graph\Algorithm\TopologicalSort;
-use Cancio\Graph\Edge\Edge;
-use Cancio\Graph\Node\Node;
+use Cancio\Graph\Ds\Edge\Edge;
+use Cancio\Graph\Ds\Node\Node;
 use PHPUnit\Framework\TestCase;
 
 class TopologicalSortTest extends TestCase

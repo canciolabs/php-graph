@@ -2,7 +2,7 @@
 
 namespace Cancio\Graph\Tests\Node;
 
-use Cancio\Graph\Node\Node;
+use Cancio\Graph\Ds\Node\Node;
 use PHPUnit\Framework\TestCase;
 
 class NodeTest extends TestCase

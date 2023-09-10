@@ -1,6 +1,6 @@
 <?php
 
-namespace Cancio\Graph\Edge;
+namespace Cancio\Graph\Ds\Edge;
 
 class Edge implements EdgeInterface
 {

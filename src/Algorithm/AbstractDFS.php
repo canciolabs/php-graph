@@ -2,9 +2,9 @@
 
 namespace Cancio\Graph\Algorithm;
 
+use Cancio\Graph\Ds\Node\NodeInterface;
 use Cancio\Graph\Exception\NodeNotFoundException;
 use Cancio\Graph\GraphInterface;
-use Cancio\Graph\Node\NodeInterface;
 use Cancio\Graph\Utils\VisitedNodesChecker;
 
 abstract class AbstractDFS

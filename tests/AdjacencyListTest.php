@@ -7,7 +7,7 @@ use Cancio\Graph\Ds\Edge\Edge;
 use Cancio\Graph\Ds\Node\Node;
 use PHPUnit\Framework\TestCase;
 
-class AdjacencyMatrixTest extends TestCase
+class AdjacencyListTest extends TestCase
 {
 
     public function testEdgesAndNodesGetters(): void
