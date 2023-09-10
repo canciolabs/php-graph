@@ -1,7 +1,8 @@
 <?php
 
-namespace Cancio\Graph\Algorithm;
+namespace Cancio\Graph\Algorithm\TopologicalSort;
 
+use Cancio\Graph\Algorithm\AbstractDFS;
 use Cancio\Graph\Ds\Node\NodeInterface;
 
 class TopologicalSort extends AbstractDFS
