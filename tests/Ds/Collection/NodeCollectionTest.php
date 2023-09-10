@@ -1,10 +1,10 @@
 <?php
 
-namespace Cancio\Graph\Tests\Collection;
+namespace Cancio\Graph\Tests\Ds\Collection;
 
-use Cancio\Graph\Collection\NodeCollection;
+use Cancio\Graph\Ds\Collection\NodeCollection;
+use Cancio\Graph\Ds\Node\Node;
 use Cancio\Graph\Exception\NodeNotFoundException;
-use Cancio\Graph\Node\Node;
 use PHPUnit\Framework\TestCase;
 
 class NodeCollectionTest extends TestCase

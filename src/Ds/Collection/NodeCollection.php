@@ -1,11 +1,11 @@
 <?php
 
-namespace Cancio\Graph\Collection;
+namespace Cancio\Graph\Ds\Collection;
 
 use ArrayIterator;
+use Cancio\Graph\Ds\Node\Node;
+use Cancio\Graph\Ds\Node\NodeInterface;
 use Cancio\Graph\Exception\NodeNotFoundException;
-use Cancio\Graph\Node\Node;
-use Cancio\Graph\Node\NodeInterface;
 use Traversable;
 
 class NodeCollection implements NodeCollectionInterface

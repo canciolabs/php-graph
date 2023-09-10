@@ -1,8 +1,8 @@
 <?php
 
-namespace Cancio\Graph\Collection;
+namespace Cancio\Graph\Ds\Collection;
 
-use Cancio\Graph\Node\NodeInterface;
+use Cancio\Graph\Ds\Node\NodeInterface;
 use Countable;
 use IteratorAggregate;
 

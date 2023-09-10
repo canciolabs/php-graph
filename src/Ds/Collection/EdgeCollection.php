@@ -1,12 +1,12 @@
 <?php
 
-namespace Cancio\Graph\Collection;
+namespace Cancio\Graph\Ds\Collection;
 
 use ArrayIterator;
-use Cancio\Graph\Edge\Edge;
-use Cancio\Graph\Edge\EdgeInterface;
+use Cancio\Graph\Ds\Edge\Edge;
+use Cancio\Graph\Ds\Edge\EdgeInterface;
+use Cancio\Graph\Ds\Node\NodeInterface;
 use Cancio\Graph\Exception\EdgeNotFoundException;
-use Cancio\Graph\Node\NodeInterface;
 use Traversable;
 
 class EdgeCollection implements EdgeCollectionInterface

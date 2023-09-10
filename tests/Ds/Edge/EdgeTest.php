@@ -1,9 +1,9 @@
 <?php
 
-namespace Cancio\Graph\Tests\Edge;
+namespace Cancio\Graph\Tests\Ds\Edge;
 
-use Cancio\Graph\Edge\Edge;
-use Cancio\Graph\Node\Node;
+use Cancio\Graph\Ds\Edge\Edge;
+use Cancio\Graph\Ds\Node\Node;
 use PHPUnit\Framework\TestCase;
 
 class EdgeTest extends TestCase

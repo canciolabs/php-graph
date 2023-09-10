@@ -2,7 +2,7 @@
 
 namespace Cancio\Graph\Exception;
 
-use Cancio\Graph\Node\NodeInterface;
+use Cancio\Graph\Ds\Node\NodeInterface;
 use Exception;
 use Throwable;
 

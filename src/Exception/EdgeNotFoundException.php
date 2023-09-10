@@ -2,7 +2,7 @@
 
 namespace Cancio\Graph\Exception;
 
-use Cancio\Graph\Edge\EdgeInterface;
+use Cancio\Graph\Ds\Edge\EdgeInterface;
 use Exception;
 use Throwable;
 

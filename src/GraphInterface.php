@@ -2,10 +2,10 @@
 
 namespace Cancio\Graph;
 
-use Cancio\Graph\Collection\EdgeCollectionInterface;
-use Cancio\Graph\Collection\NodeCollection;
-use Cancio\Graph\Edge\EdgeInterface;
-use Cancio\Graph\Node\NodeInterface;
+use Cancio\Graph\Ds\Collection\EdgeCollectionInterface;
+use Cancio\Graph\Ds\Collection\NodeCollection;
+use Cancio\Graph\Ds\Edge\EdgeInterface;
+use Cancio\Graph\Ds\Node\NodeInterface;
 
 interface GraphInterface
 {
