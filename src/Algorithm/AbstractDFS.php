@@ -2,6 +2,7 @@
 
 namespace Cancio\Graph\Algorithm;
 
+use Cancio\Graph\Exception\NodeNotFoundException;
 use Cancio\Graph\GraphInterface;
 use Cancio\Graph\Node\NodeInterface;
 use Cancio\Graph\Utils\VisitedNodesChecker;
@@ -28,6 +29,7 @@ abstract class AbstractDFS
         $this->preRun();
 
         if ($starting_node) {
+            $this->assertNodeExists($starting_node);
             $this->dfs($starting_node);
         } else {
             foreach ($this->graph->getNodes() as $node) {
@@ -51,5 +53,12 @@ abstract class AbstractDFS
     {
 		
 	}
+
+    protected function assertNodeExists(NodeInterface $u): void
+    {
+        if (!$this->graph->getNodes()->has($u)) {
+            throw new NodeNotFoundException($u);
+        }
+    }
 
 }
